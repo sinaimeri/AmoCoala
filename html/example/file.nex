@@ -1,0 +1,143 @@
+#NEXUS
+BEGIN TAXA;
+	DIMENSIONS NTAX = 11;
+	TAXLABELS
+		A
+		B
+		D
+		E
+		C
+		e
+		c2
+		c1
+		d
+		b
+		a
+		;
+ENDBLOCK;
+
+BEGIN TREES;
+	TRANSLATE
+		H0	H0,
+		H1	H1,
+		H2	A,
+		H3	B,
+		H4	H2,
+		H5	H3,
+		H6	D,
+		H7	E,
+		H8	C,
+		P0	P0,
+		P1	P1,
+		P2	P2,
+		P3	e,
+		P4	P3,
+		P5	c2,
+		P6	c1,
+		P7	P4,
+		P8	d,
+		P9	b,
+		P10	a
+		;
+	TREE HOST = ((H2,H3)H1,((H6,H7)H5,H8)H4)H0;
+	TREE PARASITE = (((P3,(P5,P6)P4)P2,(P8,P9)P7)P1,P10)P0;
+ENDBLOCK;
+
+BEGIN COPHYLOGENY;
+[RANKS represents the ranks of the nodes in the tree]
+[Syntax is: nodename timezone_from timezone_to]
+	RANKS
+		H0	0	0,
+		H1	0	0,
+		A	0	0,
+		B	0	0,
+		H2	0	0,
+		H3	0	0,
+		D	0	0,
+		E	0	0,
+		C	0	0,
+		P0	0	0,
+		P1	0	0,
+		P2	0	0,
+		e	0	0,
+		P3	0	0,
+		c2	0	0,
+		c1	0	0,
+		P4	0	0,
+		d	0	0,
+		b	0	0,
+		a	0	0
+		;
+[PHI represents the associations from the parasite leaf nodes to the host leaf nodes]
+[Syntax is: parasite_leaf_name host_leaf_name]
+	PHI
+		e	E,
+		c2	C,
+		c1	C,
+		d	D,
+		b	B,
+		a	A
+		;
+[RECONSTRUCTIONEVENTS represents the events which occurred in the reconstruction. It includes 'COSPECIATION', 'DUPLICATION', 'EXTINCTION', 'SORTING' and 'HOSTSWITCH']
+[Syntax is: operation cost]
+	RECONSTRUCTIONEVENTS
+		COSPECIATION	-1,
+		DUPLICATION	-1,
+		SORTING	-1,
+		HOSTSWITCH	-1
+		;
+[RECONSTRUCTION represents the associations from the parasite nodes to the host nodes as they occured in the reconstruction/simulation]
+[Syntax is: parasite_leaf_name host_leaf_name]
+	RECONSTRUCTION
+		;
+[POSITIONS represents the x and y position of the node]
+[Syntax is: nodename x_position y_position]
+	POSITIONS
+		H0	10	100,
+		H1	85	25,
+		A	110	0,
+		B	110	50,
+		H2	60	150,
+		H3	85	125,
+		D	110	100,
+		E	110	150,
+		C	110	200,
+		P0	355	125,
+		P1	330	150,
+		P2	280	200,
+		e	230	250,
+		P3	255	175,
+		c2	230	200,
+		c1	230	150,
+		P4	255	75,
+		d	230	100,
+		b	230	50,
+		a	230	0
+		;
+[COSTS represents the cost table for the operations 'COSPECIATION', 'DUPLICATION', 'EXTINCTION', 'SORTING' and 'HOSTSWITCH']
+[Syntax is: operation cost]
+	COSTS
+		COSPECIATION	0,
+		DUPLICATION	2,
+		SORTING	1,
+		HOSTSWITCH	3
+		;
+[OPTIONS represents the options for calculating the reconstruction]
+[Syntax is: option value]
+	OPTIONS
+		RANK	0,
+		LEAFSPECIACIONCOST	0,
+		CHECKCHRONOLOGY	0,
+		AUTOMATICCOSTS	0,
+		SORTING	1,
+		PROBABILITYCOSTS	0,
+		HOSTSWITCH	1,
+		AUTOMATICMETHOD	2,
+		RANDOMSEED	auto,
+		DUPLICATION	1,
+		ROOTMAPPING	0,
+		FULLHOSTSWITCH	0,
+		RANDOMCYCLES	5000
+		;
+ENDBLOCK;
+

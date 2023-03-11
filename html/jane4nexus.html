@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/ >
+    <title>Coala : CO-evolution Assessment by a Likelihood-free Approach</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+    
+<body bgcolor="#FFFFFF">
+
+<center>
+<table width="85%" class="maintable">
+  <tr><td><img src="./images/logo.png"><br><br></td><tr>
+  <tr><td class="title"><span class="title">CO</span>-evolution <span class="title">A</span>ssessment by a <span class="title">L</span>ikelihood-free <span class="title">A</span>pproach</td></tr>
+  <tr><td>
+    <div class="links">
+      <span class="links"><a href="index.html">Home</a></span>
+      <span class="links"><a href="documentation.html">Documentation</a></span>
+      <span class="links"><a href="download.html">Download</a></span>
+      <span class="links"><a href="contacts.html">Contacts</a></span>
+    </div>
+  </td></tr>
+  <tr><td class="text">
+
+    <div class="section">Jane / TreeMap Nexus Format</div>
+
+    <p>
+    <a class="highlight" href="http://www.cs.hmc.edu/~hadas/jane/">Jane</a> [<a class="highlight" href="#jane">1</a>] and
+    <a class="highlight" href="https://sites.google.com/site/cophylogeny/home">TreeMap</a> [<a class="highlight" href="#treemap">2</a>]
+    use the same type of nexus file (also known as tanglegram <b>.tgl</b>). This kind of file has the following structure:
+    </p>
+    <table class="nexus">
+      <tr><td>
+	<pre>
+#NEXUS
+BEGIN HOST;
+    TREE HOST = ((A,B),C);
+ENDBLOCK;
+BEGIN PARASITE;
+    TREE PARASITE = ((A1,A2),(B1,C1));
+ENDBLOCK;
+BEGIN DISTRIBUTION;
+    RANGE
+        C1 : C, B1 : B, A2 : A, A1 : A;
+ENDBLOCK;
+        </pre>
+      </td></tr>
+    </table>
+
+    <p>
+    As we can see in the example above, the this nexus file format is composed of three blocks of information.
+    </p>
+    <div class="subsection">Block HOST</div>
+    <p>
+    This block defines the host tree. This tree must be given in newick format. Usually, in this kind of file the newick format does not contains the labels of the internal nodes.
+    </p>
+
+    <div class="subsection">Block PARASITE</div>
+    <p>
+    This block defines the parasite tree. This tree must be given in newick format. Usually, in this kind of file the newick format does not contains the labels of the internal nodes.
+    </p>
+
+    <div class="subsection">Block DISTRIBUTION</div>
+    <p>
+    This block defines the association among host and parasite leaves. This list of assocations is composed by pairs &lt;Parasite Label :  Host Label&gt; separated by commas (,). In this file format, the separator is a collon character (:).
+    </p>
+
+    <div class="subsection">Important observations</div>
+    <p>
+    The input file must contain only one pair of host and parasite trees.
+    </p>
+
+    <p>
+    The current version of Coala does not allow the association of one parasite leaf with many host leaves.
+    </p>
+
+    <p>
+    For technical reasons, Coala create label names for the internal nodes of the trees. These labels have the format <b>#HX</b> and <b>#PX</b>, respectively, for host and parasite trees, where <b>X</b> is an integer number. Thus, the user should avoid the use of labels like #H1, #H2, #P1, #P2, etc.
+    </p>
+    
+    <div class="hr"><hr /></div>
+
+    <div class="section">References</div>
+    <ol>
+     <li><a name="jane"/>C. Conow, D. Fielder, Y. Ovadia, and R. Libeskind-Hadas. <b>Jane: a new tool for the cophylogeny reconstruction problem</b>. <i>Algorithms for Molecular Biology</i>, 5(16):10 pages, 2010.<br><br>
+     <li><a name="treemap"/>R. D. M. Page. <b>Parallel phylogenies: reconstructing the history of host-parasite assemblages</b>. <i>Cladistics</i>, 10(2):155–173, 1994. 
+    </ol>
+    
+    <!-- div to close the page -->
+    <div class="hr"><hr /></div>
+    
+    <!-- Logos Bamboo / INRIA -->
+    <table class="logos">
+    <tr>
+      <td class="logos"><a href="https://team.inria.fr/bamboo/en/"><img height="50" src="./images/bamboo.png"></a></td>
+      <td class="logos"><a href="http://www.inria.fr/"><img  height="50" src="./images/logo_INRIA.png"></a></td>
+    </table>
+    <hr>
+    
+  </td></tr>
+</table>
+</center>
+
+</body>
+</html>

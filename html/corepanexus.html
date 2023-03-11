@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/ >
+    <title>Coala : CO-evolution Assessment by a Likelihood-free Approach</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+    
+<body bgcolor="#FFFFFF">
+
+<center>
+<table width="85%" class="maintable">
+  <tr><td><img src="./images/logo.png"><br><br></td><tr>
+  <tr><td class="title"><span class="title">CO</span>-evolution <span class="title">A</span>ssessment by a <span class="title">L</span>ikelihood-free <span class="title">A</span>pproach</td></tr>
+  <tr><td>
+    <div class="links">
+      <span class="links"><a href="index.html">Home</a></span>
+      <span class="links"><a href="documentation.html">Documentation</a></span>
+      <span class="links"><a href="download.html">Download</a></span>
+      <span class="links"><a href="contacts.html">Contacts</a></span>
+    </div>
+  </td></tr>
+  <tr><td class="text">
+
+    <div class="section">CoRe-Pa Nexus Format</div>
+    <p>
+    <a class="highlight" href="http://www.cs.hmc.edu/~hadas/jane/">CoRe-Pa</a> [<a class="highlight" href="#corepa">1</a>] has a
+    particular type of nexus file, which is composed by many blocks
+    and sub-blocks of information to configure many parameters of the application. Coala
+    is able to read this kind of file, but it just extract information only
+    from the blocks listed in the example bellow:
+    </p>
+    <table class="nexus">
+      <tr><td>
+	<pre>
+#NEXUS
+BEGIN TREES;
+    TRANSLATE
+        H0	H0,
+	H1	H1,
+	H2	A,
+	H3	B,
+	H4	C,
+	P0	P0,
+	P1	P2,
+	P2	C1,
+	P3	B1,
+	P4	P1,
+	P5	A2,
+	P6	A1
+	;
+    TREE HOST = ((H2,H3)H1,H4)H0;
+    TREE PARASITE = ((P2,P3)P1,(P5,P6)P4)P0;
+ENDBLOCK;
+
+BEGIN COPHYLOGENY;
+    PHI
+	C1	C,
+	B1	B,
+	A2	A,
+	A1	A
+	;
+ENDBLOCK;
+        </pre>
+      </td></tr>
+    </table>
+
+    <div class="subsection">Block TREES</div>
+    <p>
+    The block TREES has information about the pair of trees. The
+    sub-block TRANSLATE contains pairs &lt;label<sub>newick</sub>
+    label<sub>real</sub>&gt; which define the translation from the
+    labels which appear in the newick represetantion to the real
+    labels of the nodes of the trees. For instance, in the example above the
+    real label of the host tree node <b>H2</b> is <b>A</b>. The labels of
+    each pair are separated by a TAB character (\t) and each pair is
+    separated by a comma character (,).
+    </p>
+
+    <p>
+    After the sub-block TRANSLATE, the file contains two lines with
+    the newick representation of host and parasite trees. Notice that,
+    in this file format, the newick representation contains the labels
+    of the internal nodes of the trees.
+    </p>
+
+    <div class="subsection">Block COPHYLOGENY</div>
+    <p>
+    In the CoRe-Pa nexus file, the block COPHYLOGENY has many sub-blocks which
+    configure the parameters of the application. In this block, Coala extracts
+    information only from the sub-block PHI. This sub-block is composed by pairs
+    of the type &lt;leaf<sub>parasite</sub> leaf<sub>host</sub>&gt; where the
+    elements are separated by a TAB character (\t) and each pair is separated
+    by a comma character (,).
+    </p>
+    <p>
+    Notice that, the leaf labels that are listed in the pairs refer to the real
+    labels and not to the labels that appear in the newick representation of the trees. 
+    </p>
+
+    <div class="subsection">Important observations</div>
+    <p>
+    The input file must contain only one pair of host and parasite trees.
+    </p>
+
+    <p>
+    The current version of Coala does not allow the association of one parasite leaf with many host leaves.
+    </p>
+
+    <div class="hr"><hr /></div>
+
+    <div class="section">References</div>
+    <ol>
+      <li><a name="corepa"/>D. Merkle, M. Middendorf, and N. Wieseke. <b>A parameter-adaptive
+      dynamic programming  approach for inferring cophylogenies</b>. <i>BMC Bioinformatics</i>,
+      11(Supplementary 1):10 pages, 2010.
+    </ol>
+    
+    <!-- div to close the page -->
+    <div class="hr"><hr /></div>
+    
+    <!-- Logos Bamboo / INRIA -->
+    <table class="logos">
+    <tr>
+      <td class="logos"><a href="https://team.inria.fr/bamboo/en/"><img height="50" src="./images/bamboo.png"></a></td>
+      <td class="logos"><a href="http://www.inria.fr/"><img  height="50" src="./images/logo_INRIA.png"></a></td>
+    </table>
+    <hr>
+    
+  </td></tr>
+</table>
+</center>
+
+</body>
+</html>
