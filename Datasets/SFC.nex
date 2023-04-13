@@ -1,0 +1,33 @@
+#NEXUS
+BEGIN HOST;
+	TREE * Host = (Stellaria, (((Sa._officinialis, G._repens), ((D._gratianopolitanus,D._sylvestris),(D._carthusianorum,D._monspessulanus))), ((L._flos-cuculi, L._flos-jovis), (((S._aucalis, S._otites), S._nutans), ((S._dioica, S._latifolia), (S._vulgaris, (S._lemmonii, (S._caroliniana,S._virginica))))))));
+ENDBLOCK;
+
+BEGIN PARASITE;
+	TREE * Parasite = (MvSspA, (MvSA, ((MvSv1, MvLfj), ((MvSlem, (((MvSl, MvSd), ((MvSv2, MvSn), MvLfc)), MvSot)), ((((MvDsp2, MvDsp1), MvDc), MvSaoff), MvStel)))));
+ENDBLOCK;
+
+BEGIN DISTRIBUTION;
+	RANGE
+MvSlem: S._lemmonii,
+MvSl: S._latifolia,
+MvSd: S._dioica,
+MvSv2: S._vulgaris,
+MvSn: S._nutans,
+MvLfc: L._flos-cuculi,
+MvSot: S._otites,
+MvSaoff: Sa._officinialis,
+MvSA: S._aucalis,
+MvStel: Stellaria,
+MvSv1: S._vulgaris,
+MvLfj: L._flos-jovis,
+MvSspA: S._caroliniana,
+MvSspA: S._virginica,
+MvDsp2: D._monspessulanus,
+MvDsp2: D._gratianopolitanus,
+MvDsp1: D._carthusianorum,
+MvDsp1: D._sylvestris,
+MvDc: G._repens,
+MvDc: D._carthusianorum
+	;
+END;

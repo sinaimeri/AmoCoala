@@ -1,0 +1,42 @@
+#NEXUS
+BEGIN HOST;
+	TREE * Host = (((((A_cornigera, A_sphaerocephala), A_gentlei), ((((A_globulifera, A_collinsii), A_hirtipes), A_hindsii), A_cedilloi)), A_mayana), A_chiapensis);
+ENDBLOCK;
+
+BEGIN PARASITE;
+	TREE * Parasite = ((((((P_ferrugineus, P_flavicornis), P_mixtecus), P_peperi), P_veneficus), P_spinicola), P_nigrocinctus);
+ENDBLOCK;
+
+BEGIN DISTRIBUTION;
+	RANGE
+P_ferrugineus: A_chiapensis,
+P_ferrugineus: A_mayana,
+P_ferrugineus: A_gentlei,
+P_ferrugineus: A_cornigera,
+P_ferrugineus: A_sphaerocephala,
+P_ferrugineus: A_hindsii,
+P_ferrugineus: A_collinsii,
+P_ferrugineus: A_globulifera,
+P_flavicornis: A_cornigera,
+P_flavicornis: A_hindsii,
+P_flavicornis: A_collinsii,
+P_mixtecus: A_cornigera,
+P_mixtecus: A_hindsii,
+P_mixtecus: A_collinsii,
+P_peperi: A_chiapensis,
+P_peperi: A_gentlei,
+P_peperi: A_cornigera,
+P_peperi: A_cedilloi,
+P_peperi: A_hindsii,
+P_peperi: A_globulifera,
+P_veneficus: A_cornigera,
+P_veneficus: A_sphaerocephala,
+P_veneficus: A_hindsii,
+P_veneficus: A_globulifera,
+P_spinicola: A_cornigera,
+P_spinicola: A_collinsii,
+P_nigrocinctus: A_cornigera,
+P_nigrocinctus: A_hindsii,
+P_nigrocinctus: A_collinsii
+	;
+END;

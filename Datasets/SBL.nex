@@ -1,0 +1,36 @@
+#NEXUS
+BEGIN HOST;
+	TREE * Host = (Spotted_Shag,((Adelie_Penguin,(Little_Blue_Penguin,(Fiordland_Crested_Penguin, Yellow-eyed_Penguin))),((Royal_Albatros,Buller_Mollymawk),(((Mottled_Petrel,Cook_Petrel),(Westland_Petrel,(Sooty_Shearwather,Hutton_Shearwater))),((Broad-billed_Prion,Fairy_Prion),Common_Diving_Petrel)))));
+ENDBLOCK;
+
+BEGIN PARASITE;
+	TREE * Parasite = (Pectinopygus,(Docophoroides,((Austrogonoides,Episbates),(((Naubates,Harrisoniella),Pelmatocerandra),Trabeculus))));
+ENDBLOCK;
+
+BEGIN DISTRIBUTION;
+	RANGE
+		Pectinopygus: Spotted_Shag,
+		Docophoroides: Buller_Mollymawk,
+		Docophoroides: Royal_Albatros,
+		Austrogonoides: Adelie_Penguin,
+		Austrogonoides: Little_Blue_Penguin,
+		Austrogonoides: Fiordland_Crested_Penguin,
+		Austrogonoides: Yellow-eyed_Penguin,
+		Episbates: Royal_Albatros,
+		Naubates: Broad-billed_Prion,
+		Naubates: Mottled_Petrel,
+		Naubates: Cook_Petrel,
+		Naubates: Westland_Petrel,
+		Naubates: Sooty_Shearwather,
+		Naubates: Hutton_Shearwater,
+		Naubates: Fairy_Prion,
+		Harrisoniella: Buller_Mollymawk,
+		Harrisoniella: Royal_Albatros,
+		Pelmatocerandra: Common_Diving_Petrel,
+		Trabeculus: Mottled_Petrel,
+		Trabeculus: Cook_Petrel,
+		Trabeculus: Westland_Petrel,
+		Trabeculus: Sooty_Shearwather,
+		Trabeculus: Hutton_Shearwater
+	;
+END;
