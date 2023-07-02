@@ -1,6 +1,5 @@
-<img title="AmoCoale" alt="" src="docs/images/Logo_AmoCoala.png">
+<img title="AmoCoale" alt="" src="/images/Logo_AmoCoala.png">
 
-XXXXXXX  WARNING IF YOU MOOVE THE IMAGES DIRECTORY THEN CHANGE ALL THE LINKSXXXXX
 
 ## Presentation
 
@@ -33,7 +32,6 @@ AmoCoala replaces the previous tool Coala.
 ## Install 
 To use AmoCoala it is sufficient to download the AmoCoala.jar file.
 
-XXXXX WHERE IS IT LOCATED ????XXXXXXXX
 
 Downloading AmoCoalaimposes full acceptance of the [Cecill license](http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt).
 
