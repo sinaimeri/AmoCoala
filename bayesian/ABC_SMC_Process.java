@@ -112,7 +112,7 @@ public class ABC_SMC_Process {
 
 	public static final boolean DEFAULT_CONTINUE = false;
 
-	public static final int DEFAULT_METRIC = GenerateDistribution.METRIC_EVENTS_AND_MAAC_DISTANCE;
+	public static final int DEFAULT_METRIC = GenerateDistribution.METRIC_EVENTS_AND_MAAC_DISTANCE_MULTIPLEASSOCIATIONS;
 
 	public static final int DEFAULT_NUMBER_OF_ITERATIONS = 3;
 
