@@ -1,11 +1,6 @@
 <img title="AmoCoale" alt="" src="/images/Logo_AmoCoala.png">
 
-
-## Presentation
-
-AmoCoala, is a tool for estimating the frequency of cophylogeny events based on an approximate Bayesian computation approach **in presence of multiple associations** between hosts and symbionts. 
-
-AmoCoala replaces the previous tool Coala and extends the classical 4 events
+AmoCoala, is a tool for estimating the frequency of cophylogeny events based on an approximate Bayesian computation approach **in presence of multiple associations** between hosts and symbionts.  AmoCoala replaces the previous tool Coala and extends the classical 4 events
 co-evolutionary model to include 2 additional **spreads events**: vertical and horizontal spreads that induce multiple associations. 
 
 
@@ -19,25 +14,49 @@ For more details about our methodology, please refer to our papers:
 <img title="AmoCoale" alt="" src="docs/images/hr.png">
 </p>
 
-## System requirements 
-
-AmoCoala was developed in **Java 1.6** and tested in the Linux and Mac OS X environments. Additionally, in order to perform the clustering of the accepted vectors and produce graphical plots, AmoCoala requires the installation of R and of the **R packages dynamicTreeCut** and **ade4**.
-
-AmoCoala replaces the previous tool Coala.
-
-<p align="center">
-<img title="AmoCoale" alt="" src="docs/images/hr.png">
-</p>
-
 ## Install 
-To use AmoCoala it is sufficient to download the AmoCoala.jar file.
+
+AmoCoala was developed in **19.0.1** and tested in the Linux and Mac OS X environments. Additionally, in order to perform the clustering of the accepted vectors and produce graphical plots, AmoCoala requires the installation of R and of the **R packages dynamicTreeCut** and **ade4**.
+There are two main options to run the tool.
+
+### Option 1: Using the JAR File
+If you have Java 19.0.1 or higher installed, you can choose to use the provided JAR file for easy execution.
+
+1. Download the JAR File
+  	- Download the AmoCoala.jar file. Notice that downloading AmoCoala imposes full acceptance of the [Cecill license](http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt).
+
+3. Execute the JAR File
+
+	- Open a command prompt or terminal.
+
+	- Navigate to the directory where the JAR file is located.
+
+	- Run the following command to execute the JAR file:
+ 
+     java -jar AmoCoala.jar -input <nexusfile> [options]
 
 
-Downloading AmoCoalaimposes full acceptance of the [Cecill license](http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt).
 
-<p align="center">
-<img title="AmoCoale" alt="" src="docs/images/hr.png">
-</p>
+ ## Option 2: Manual Compilation and Execution
+
+If you don't have Java 19.0.1 installed or prefer to manually compile and execute the code, follow these steps.
+
+1. **Download the Project**
+
+   Download the project folder from the provided source.
+
+2. **Open a Command Prompt or Terminal**
+
+   Open a command prompt or terminal on your system.
+
+3. **Navigate to the Project Directory**
+
+   Use the `cd` command to navigate to the downloaded project folder. For example:
+
+	
+
+
+
 
 ## Input files 
 AmoCoala receives a NEXUS file as input. The input file must contain a pair of trees (one host tree and one symbiont tree) and the (possibly multiple) association of their leaves. 
@@ -50,18 +69,8 @@ AmoCoala can read two types of Nexus files (.nex):
 Please, verify that your file meets [the Nexus format description](nexus.md). 
 
 <p align="center">
-<img title="AmoCoale" alt="" src="docs/images/hr.png">
+<img title="AmoCoale" alt="" src="images/hr.png">
 </p>
-
-
-## Using AmoCoala (and options details)
- The general command line for using AmoCoala is:
- 
-	java -jar AmoCoala.jar -input <nexusfile> [options]
-
-We recommend the use of the Java option `-Xmx` for increasing the maximum memory available for AmoCoala. For example, to set the maximum amount of memory to 3 Gigabytes, use the following command line:
-
-	java -Xmx3g -jar AmoCoala.jar -input <nexusfile> [options]
 
 Here we list all options that are offered by the software:
 
