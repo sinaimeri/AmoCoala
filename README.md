@@ -22,22 +22,22 @@ There are two main options to run the tool.
 ### Option 1: Using the JAR File
 If you have Java 19.0.1 or higher installed, you can choose to use the provided JAR file for easy execution.
 
-1. Download the JAR File
+1. **Download the JAR File**
   	- Download the AmoCoala.jar file. Notice that downloading AmoCoala imposes full acceptance of the [Cecill license](http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt).
 
-3. Execute the JAR File
+3. **Execute the JAR File**
 
 	- Open a command prompt or terminal.
 
 	- Navigate to the directory where the JAR file is located.
 
 	- Run the following command to execute the JAR file:
- 
-     java -jar AmoCoala.jar -input <nexusfile> [options]
+```
+   java -jar AmoCoala.jar -input <nexusfile> [options]
+```
 
 
-
- ## Option 2: Manual Compilation and Execution
+ ## Option 2: Manual Compilation and Jar File creation
 
 If you don't have Java 19.0.1 installed or prefer to manually compile and execute the code, follow these steps.
 
@@ -51,9 +51,34 @@ If you don't have Java 19.0.1 installed or prefer to manually compile and execut
 
 3. **Navigate to the Project Directory**
 
-   Use the `cd` command to navigate to the downloaded project folder. For example:
+   Use the `cd` command to navigate to the downloaded project folder.
+   
+4. **Compile the Code**
 
-	
+- Execute the following command to compile the Java source code:
+
+ ```  
+javac -cp “.:./lib/commons-cli-1.2.jar:./lib/guava-14.0-rc3.jar:./lib/JSAT_r754.jar:./lib/junit-platform-console-standalone-1.10.0-M1.jar”  exec/ABC_SMC.java -Xlint
+```
+
+5. **Create the Jar File**
+
+- Once the code is successfully compiled, create the jar file with the following command:
+
+```
+jar cvfm AmoCoala.jar manifest.txt .
+```
+
+3. **Execute the JAR File**
+
+	- Open a command prompt or terminal.
+
+	- Navigate to the directory where the JAR file is located.
+
+	- Run the following command to execute the JAR file:
+```
+   java -jar AmoCoala.jar -input <nexusfile> [options]
+```
 
 
 
