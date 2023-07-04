@@ -159,7 +159,7 @@ Default value = 5.
 
 	-metric <number>	
 Defines the metric that will be used in the comparison between real and simulated trees. Currently, AmoCoala offers these 4 options: MAAC (1);     LEAVES AND MAAC (2);    EVENTS AND MAAC (3); EVENTS AND MAAC- MULTIPLE ASSOCIATIONS Metric (4).  
-Default metric = 3.
+Default metric = 4.
 
 	-N <value>	
 Defines the number of probability vectors which are going to be sampled in the first round of the ABC-SMC process.
