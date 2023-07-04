@@ -58,7 +58,7 @@ If you don't have Java 19.0.1 installed or prefer to manually compile and execut
 - Execute the following command to compile the Java source code:
 
  ```  
-javac -cp “.:./lib/commons-cli-1.2.jar:./lib/guava-14.0-rc3.jar:./lib/JSAT_r754.jar:./lib/junit-platform-console-standalone-1.10.0-M1.jar”  exec/ABC_SMC.java -Xlint
+javac -cp ".:./lib/commons-cli-1.2.jar:./lib/guava-14.0-rc3.jar:./lib/JSAT_r754.jar:./lib/junit-platform-console-standalone-1.10.0-M1.jar"  exec/ABC_SMC.java -Xlint
 ```
 
 5. **Create the Jar File**
