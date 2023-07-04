@@ -16,7 +16,7 @@ For more details about our methodology, please refer to our papers:
 
 ## Install 
 
-AmoCoala was developed in **19.0.1** and tested in the Linux and Mac OS X environments. Additionally, in order to perform the clustering of the accepted vectors and produce graphical plots, AmoCoala requires the installation of R and of the **R packages dynamicTreeCut** and **ade4**.
+AmoCoala was developed in **Java 19.0.1** and tested in the Linux and Mac OS X environments. Additionally, in order to perform the clustering of the accepted vectors and produce graphical plots, AmoCoala requires the installation of R and of the **R packages dynamicTreeCut** and **ade4**.
 There are two main options to run the tool.
 
 ### Option 1: Using the JAR File
@@ -37,7 +37,7 @@ If you have Java 19.0.1 or higher installed, you can choose to use the provided 
 ```
 
 
- ## Option 2: Manual Compilation and Jar File creation
+### Option 2: Manual Compilation and Jar File creation
 
 If you don't have Java 19.0.1 installed or prefer to manually compile and execute the code, follow these steps.
 
@@ -102,12 +102,12 @@ Here we list all options that are offered by the software:
 	-a1 <value>	 
 Defines the value of the constant $\alpha_1$ which is used to compute the metrics `LEAVES AND MAAC`, `EVENTS AND MAAC` and `EVENTS AND MAAC-MULTIPLE ASSOCIATIONS`.
 Default value = 0.5 (for `LEAVES AND MAAC`) or 0.7 (for `EVENTS AND MAAC` and `EVENTS AND MAAC-MULTIPLE ASSOCIATIONS`).
-XXXX If a value different from the default value is chosen, note that the 2 values from `-a1` and `-a2` options should sum to 1.XXXX
+If a value different from the default value is chosen, note that the 2 values from `-a1` and `-a2` options should sum to 1.
 
 	-a2 <value>	
 Defines the value of the constant $\alpha_2$ which is used to compute the metrics `LEAVES AND MAAC`, `EVENTS AND MAAC` and `EVENTS AND MAAC-MULTIPLE ASSOCIATIONS`.
 Default value = 0.5 (for `LEAVES AND MAAC`) or 0.3 (for `EVENTS AND MAAC` and `EVENTS AND MAAC-MULTIPLE ASSOCIATIONS`).
-XXXX If a value different from the default value is chosen, note that the 2 values from `-a1` and `-a2` options should sum to 1.XXXX
+If a value different from the default value is chosen, note that the 2 values from `-a1` and `-a2` options should sum to 1.
 
 
 	-ac <value>	
@@ -280,5 +280,6 @@ In case of doubts, comments, suggestions, or bug notifications, please write to 
 <p align="center">
 <img title="AmoCoale" alt="" src="docs/images/hr.png">
 </p>
+
 ## License
 All of the source code to this product is available under the [CeCILL](http://www.cecill.info/), compatible with [GNU GPL](http://www.gnu.org/licenses/gpl-3.0.html).
