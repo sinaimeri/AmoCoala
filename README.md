@@ -82,6 +82,10 @@ jar cvfm AmoCoala.jar manifest.txt .
 
 
 
+<p align="center">
+<img title="AmoCoale" alt="" src="images/hr.png">
+</p>
+
 
 ## Input files 
 AmoCoala receives a NEXUS file as input. The input file must contain a pair of trees (one host tree and one symbiont tree) and the (possibly multiple) association of their leaves. 
@@ -97,6 +101,8 @@ Please, verify that your file meets [the Nexus format description](nexus.md).
 <img title="AmoCoale" alt="" src="images/hr.png">
 </p>
 
+
+## Options 
 Here we list all options that are offered by the software:
 
 	-a1 <value>	 
@@ -183,9 +189,11 @@ Default value = 0.10,0.25,0.25.
 Defines the number of threads that are going to be used to simulate symbiont  trees.
 Default value = 1.
 
+
 <p align="center">
-<img title="AmoCoale" alt="" src="docs/images/hr.png">
+<img title="AmoCoale" alt="" src="images/hr.png">
 </p>
+
 
 ## Output files 
 During its execution, AmoCoala produces some output files to register intermediate and final results. Given an input file `file.nex`, the program will produce the following files:
@@ -227,7 +235,7 @@ This file is produced only if the options `-cluster` and `-plot` are specified i
 
 
 <p align="center">
-<img title="AmoCoale" alt="" src="docs/images/hr.png">
+<img title="AmoCoale" alt="" src="images/hr.png">
 </p>
 
 
@@ -274,11 +282,15 @@ Output files:
 
 You can also find the analysis from AmoCoala paper in `PaperDatasets.zip`
 
+<p align="center">
+<img title="AmoCoale" alt="" src="images/hr.png">
+</p>
+
 ## Contacts  
 In case of doubts, comments, suggestions, or bug notifications, please write to bsinaimeri at luiss dot it. 
 
 <p align="center">
-<img title="AmoCoale" alt="" src="docs/images/hr.png">
+<img title="AmoCoale" alt="" src="images/hr.png">
 </p>
 
 ## License
