@@ -1,2 +1,3 @@
+Manifest-Version: 1.0
 Main-Class: exec.ABC_SMC
-Class-Path: lib/commons-cli-1.2.jar lib/guava-14.0-rc3.jar ib/JSAT_r754.jar lib/junit-platform-console-standalone-1.10.0-M1.jar bin/module-info.class
+Class-Path: lib/commons-cli-1.2.jar lib/guava-14.0-rc3.jar lib/JSAT_r754.jar lib/junit-platform-console-standalone-1.10.0-M1.jar
