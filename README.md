@@ -135,11 +135,6 @@ If this option is present, the list of accepted vectors produced in the last rou
 	-continue	
 If this option is present, the software tries to continue a job that was started previously and interrupted in the middle. AmoCoala looks for the output files which are present in the output directory and starts the process from the last executed round. If no output file is found, AmoCoala starts the process from the beginning. Notice that, to use this option, the software must be configured with the same options of the job that was previously interrupted.
 
-	-ct <value>
-Defines the cyclicity test implementation that will be used to avoid time inconsistent scenarios during the generation of the trees. 
-Refs: [Stolzer et al. 2012](https://doi.org/10.1093/bioinformatics/bts386); [Donati et al. 2014](https://doi.org/10.1186/s13015-014-0031-3); [Tofigh et al. 2011](https://doi.org/10.1109/tcbb.2010.14) 
-Default value = 2.
-
 	-discard <value>
 Defines the multiplier value that is used to compute the maximum number of vectors which can be discarded during the generation of the quantile populations (nb of rounds greater than 1). The maximum number of discarded vectors D is defined as: D = value × Q, where Q = N × threshold\_first\_round and N is the number of simulated vectors (option `-N`). Notice that D must be an integer greater than 1 (D > 1).
 Default value = 10.
