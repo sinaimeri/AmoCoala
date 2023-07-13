@@ -11,8 +11,9 @@ For more details about our methodology, please refer to our papers:
 2. C. Baudet, B. Donati, B. Sinaimeri, P. Crescenzi, C. Gautier, C. Matias, and M.-F. Sagot. Cophylogeny reconstruction via an approximate Bayesian computation. *Systematic Biology*, 64(3): 416-431, 2015 [Journal link](https://doi.org/10.1093/sysbio/syu129).
 
 <p align="center">
-<img title="AmoCoale" alt="" src="docs/images/hr.png">
+<img title="AmoCoale" alt="" src="images/hr.png">
 </p>
+
 
 ## Installation and requirements 
 
@@ -40,6 +41,9 @@ javac -cp ".:./lib/commons-cli-1.2.jar:./lib/guava-14.0-rc3.jar:./lib/JSAT_r754.
 ```
 jar cvfm AmoCoala.jar manifest.MF .
 ```
+<p align="center">
+<img title="AmoCoale" alt="" src="images/hr.png">
+</p>
 
 ## Using AmoCoala
 
