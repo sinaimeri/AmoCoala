@@ -72,12 +72,7 @@ In a terminal, navigate to the directory where the JAR file is located and run t
 ## Input files 
 AmoCoala receives a NEXUS file as input. The input file must contain a pair of trees (one host tree and one symbiont tree) and the (possibly multiple) association of their leaves. 
  
-AmoCoala can read two types of Nexus files (.nex):
-
-- Jane / TreeMap Nexus Format
-- CoRe-Pa Nexus Format 
-
-Please, verify that your file meets [the Nexus format description](Docs/nexus.md). 
+AmoCoala can read Jane / TreeMap Nexus Format. Please, verify that your file meets [the Nexus format description](Docs/nexus.md). 
 
 <p align="center">
 <img title="AmoCoale" alt="" src="images/hr.png">
