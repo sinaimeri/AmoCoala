@@ -1,0 +1,11 @@
+#NEXUS
+BEGIN HOST;
+	TREE HOST = ((A,B),((D,E),C));
+ENDBLOCK;
+BEGIN PARASITE;
+	TREE PARASITE = (((e,(c2,c1)),(d,b)),a);
+ENDBLOCK;
+BEGIN DISTRIBUTION;
+	RANGE
+		e : E, c2 : C, c1 : C, d : D, b : B, a : A;
+ENDBLOCK;
