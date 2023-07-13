@@ -8,79 +8,50 @@ For more details about our methodology, please refer to our papers:
 
 1. L. Urbini, B. Sinaimeri, M.-F. Sagot, and C. Matias. (2022). Cophylogeny Reconstruction Allowing for Multiple Associations Through Approximate Bayesian Computation. Submitted, [ArXiV preprint](https://arxiv.org/abs/2205.11084) 
  	- Note that a Supplementary Material for this paper is available in the [ArXiV preprint](https://arxiv.org/abs/2205.11084) version.
-2. C. Baudet, B. Donati, B. Sinaimeri, P. Crescenzi, C. Gautier, C. Matias, and M.-F. Sagot. Cophylogeny reconstruction via an approximate Bayesian computation. *Systematic Biology*, 64(3): 416-431, 2015 [Journal link](doi:10.1093/sysbio/syu129).
+2. C. Baudet, B. Donati, B. Sinaimeri, P. Crescenzi, C. Gautier, C. Matias, and M.-F. Sagot. Cophylogeny reconstruction via an approximate Bayesian computation. *Systematic Biology*, 64(3): 416-431, 2015 [Journal link](https://doi.org/10.1093/sysbio/syu129).
 
 <p align="center">
 <img title="AmoCoale" alt="" src="docs/images/hr.png">
 </p>
 
-## Install 
+## Installation and requirements 
 
-AmoCoala was developed in **Java 19.0.1** and tested in the Linux and Mac OS X environments. Additionally, in order to perform the clustering of the accepted vectors and produce graphical plots, AmoCoala requires the installation of R and of the **R packages dynamicTreeCut** and **ade4**.
-There are two main options to run the tool.
+AmoCoala is released under the  [CeCILL](http://www.cecill.info/) license, compatible with [GNU GPL](http://www.gnu.org/licenses/gpl-3.0.html).
 
-### Option 1: Using the JAR File
-If you have Java 19.0.1 or higher installed, you can choose to use the provided JAR file for easy execution.
+AmoCoala was developed in **Java** and tested in the Linux and Mac OS X environments. Additionally, in order to perform the clustering of the accepted vectors and produce graphical plots, AmoCoala requires the installation of R and of the **R packages dynamicTreeCut** and **ade4**.
 
-1. **Download the JAR File**
-  	- Download the AmoCoala.jar file. Notice that downloading AmoCoala imposes full acceptance of the [Cecill license](http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt).
-
-3. **Execute the JAR File**
-
-	- Open a command prompt or terminal.
-
-	- Navigate to the directory where the JAR file is located.
-
-	- Run the following command to execute the JAR file:
-```
-   java -jar AmoCoala.jar -input <nexusfile> [options]
-```
+Installation is through manual compilation and Jar file creation. You will need Java and the compiler javac.
 
 
-### Option 2: Manual Compilation and Jar File creation
+1. Download the project folder from the provided source.
 
-If you don't have Java 19.0.1 installed or prefer to manually compile and execute the code, follow these steps.
+2. Open a command prompt or terminal on your system.
 
-1. **Download the Project**
-
-   Download the project folder from the provided source.
-
-2. **Open a Command Prompt or Terminal**
-
-   Open a command prompt or terminal on your system.
-
-3. **Navigate to the Project Directory**
-
-   Use the `cd` command to navigate to the downloaded project folder.
+3. Navigate to the Project Directory (Use the `cd` command).
    
-4. **Compile the Code**
+4. Execute the following command to compile the Java source code:
 
-- Execute the following command to compile the Java source code:
-
- ```  
-javac -cp ".:./lib/commons-cli-1.2.jar:./lib/guava-14.0-rc3.jar:./lib/JSAT_r754.jar:./lib/junit-platform-console-standalone-1.10.0-M1.jar"  exec/ABC_SMC.java -Xlint
+```  
+javac -cp ".:./lib/commons-cli-1.2.jar:./lib/guava-14.0-rc3.jar:./lib/JSAT_r754.jar:./lib/junit-platform-console-standalone-1.10.0-M1.jar"  $(find ./* | grep .java) -Xlint
 ```
 
-5. **Create the Jar File**
-
-- Once the code is successfully compiled, create the jar file with the following command:
+5. Once the code is successfully compiled, create the jar file with the following command:
 
 ```
-jar cvfm AmoCoala.jar manifest.txt .
+jar cvfm AmoCoala.jar manifest.MF .
 ```
 
-3. **Execute the JAR File**
+## Using AmoCoala
 
-	- Open a command prompt or terminal.
-
-	- Navigate to the directory where the JAR file is located.
-
-	- Run the following command to execute the JAR file:
+In a terminal, navigate to the directory where the JAR file is located and run the following command to execute the JAR file:
 ```
    java -jar AmoCoala.jar -input <nexusfile> [options]
 ```
 
-
+**Examples**: The directory Datasets contains the 4 datasets (Nexus files) which we used in our study. You can process them with the command: 
+```
+    java -jar AmoCoala.jar -input Datasets/AP.nex -cluster -plot
+```
 
 <p align="center">
 <img title="AmoCoale" alt="" src="images/hr.png">
@@ -153,7 +124,7 @@ Defines the multiplier value that is used to compute the maximum number of trees
 Default value = 5.
 
 	-metric <number>	
-Defines the metric that will be used in the comparison between real and simulated trees. Currently, AmoCoala offers these 4 options: MAAC (1);     LEAVES AND MAAC (2);    EVENTS AND MAAC (3); EVENTS AND MAAC- MULTIPLE ASSOCIATIONS Metric (4).  
+Defines the metric that will be used in the comparison between real and simulated trees. Currently, AmoCoala offers these 4 options: MAAC (1);     LEAVES AND MAAC (2);    EVENTS AND MAAC (3); EVENTS AND MAAC- MULTIPLE ASSOCIATIONS Metric (4).  Only the last one can handle trees with multiple associations.
 Default metric = 4.
 
 	-N <value>	
@@ -195,19 +166,19 @@ During its execution, AmoCoala produces some output files to register intermedia
 
 	file.nex.simul.round_X.csv
 
-This file contains the list of probability vectors which were **simulated** during round X. It is a csv file which contains one line per probability vector and 7 columns: probability of co-speciation, probability of duplication, probability of host-switch, probability of loss, number of vertical spreads, number of horizontal spreads and observed distance.
+This file contains the list of probability vectors which were **simulated** during round X. It is a csv file which contains one line per probability vector and 7 (or 5) columns: probability of co-speciation, probability of duplication, probability of host-switch, probability of loss, number of vertical spreads (if metric=4), number of horizontal spreads (if metric=4) and observed distance.
 
 	file.nex.accep.round_X.csv
 
-This file contains the list of probability vectors which were **accepted** by the ABC rejection method at round X. It is a csv file which contains one line per probability vector and 7 columns: probability of co-speciation, probability of duplication, probability of host-switch, probability of loss, number of vertical spreads, number of horizontal spreads and distance observed.
+This file contains the list of probability vectors which were **accepted** by the ABC rejection method at round X. It is a csv file which contains one line per probability vector and 7 (or 5) columns: probability of co-speciation, probability of duplication, probability of host-switch, probability of loss, number of vertical spreads (if metric=4), number of horizontal spreads (if metric=4) and distance observed.
 
 	file.nex.plots.round_X.pdf
 
 This PDF file contains a set of histograms which describe the results after round X. The plots show the distribution of the:
 
--  Probabilities of each event type, and number of vertical and horizontal spreads among all **simulated** probability vectors (first row);
+-  Probabilities of each event type, and number of vertical and horizontal spreads (if metric=4) among all **simulated** probability vectors (first row);
 
--  Probabilities of each event type, and number of vertical and horizontal spreads among the **accepted** probability vectors (second row);
+-  Probabilities of each event type, and number of vertical and horizontal spreads (if metric=4) among the **accepted** probability vectors (second row);
 
 -  Distances observed among all simulated probability vectors and among the accepted probability vectors (third row).
 
@@ -228,54 +199,6 @@ This file is produced only if the options `-cluster` and `-plot` are specified i
 **Observation**: All csv files use the TAB character (\t) as column separator.
 
 
-
-<p align="center">
-<img title="AmoCoale" alt="" src="images/hr.png">
-</p>
-
-
-
-## Examples 
-The directory Datasets contains the 4 datasets (Nexus files) which we used in our study. 
-
-Command line:
-
-    java -jar AmoCoala.jar -input file.nex -cluster -plot
-
-
-XXXXX WARNING HERE THE LINKS ARE TOWARDS Datasets/example/ XXXX
-Input file: `file.nex` you can use [Jane Nexus file](Datasets/example/file.jane.nex) or [CoRe-Pa Nexus file](Datasets/example/file.nex). 
-
-Output files:
-
-   [file.nex.simul.round_1.csv](Datasets/example/file.nex.simul.round_1.csv)
-   
-   [file.nex.simul.round_2.csv](Datasets/example/file.nex.simul.round_2.csv)
-   
-   [file.nex.simul.round_3.csv](Datasets/example/file.nex.simul.round_3.csv)
-   
-   [file.nex.accep.round_1.csv](Datasets/example/file.nex.accep.round_1.csv)
-   
-   [file.nex.accep.round_2.csv](Datasets/example/file.nex.accep.round_2.csv)
-    
-   [file.nex.accep.round_3.csv](Datasets/example/file.nex.accep.round_3.csv)
-   
-   [file.nex.plots.round_1.pdf](Datasets/example/file.nex.plots.round_1.pdf)
-   
-   [file.nex.plots.round_2.pdf](Datasets/example/file.nex.plots.round_2.pdf)
-   
-   [file.nex.plots.round_3.pdf](Datasets/example/file.nex.plots.round_3.pdf)
-   
-   [file.nex.clust.round_3.1.csv](Datasets/example/file.nex.clust.round_3.1.csv)
-   
-  [file.nex.clust.round_3.2.csv](Datasets/example/file.nex.clust.round_3.2.csv)
- 
-  [file.nex.clust.round_3.3.csv](Datasets/example/file.nex.clust.round_3.3.csv)
-  
-[file.nex.clusters.round_3.pdf](Datasets/example/file.nex.clusters.round_3.pdf) 
-
-
-You can also find the analysis from AmoCoala paper in `PaperDatasets.zip`
 
 <p align="center">
 <img title="AmoCoale" alt="" src="images/hr.png">
