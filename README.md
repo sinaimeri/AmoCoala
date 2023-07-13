@@ -42,7 +42,7 @@ javac -cp ".:./lib/commons-cli-1.2.jar:./lib/guava-14.0-rc3.jar:./lib/JSAT_r754.
 jar cvfm AmoCoala.jar manifest.MF .
 ```
 
-6. Check the installation process by running this example:
+6. Check the installation process by running this toy example:
 ```
      java -jar AmoCoala.jar -input Datasets/file.jane.nex  -metric 1 -N 10 -M 10 -R 1 -t 0.1
 ```
@@ -59,6 +59,10 @@ In a terminal, navigate to the directory where the JAR file is located and run t
    java -jar AmoCoala.jar -input <nexusfile> [options]
 ```
 
+**Examples**: You can run the experiments from reference [1] above by using
+```
+   java -jar AmoCoala.jar -input Datasets/AP.nex -cluster -plot
+```
 
 <p align="center">
 <img title="AmoCoale" alt="" src="images/hr.png">
