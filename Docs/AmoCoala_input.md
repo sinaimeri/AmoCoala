@@ -1,6 +1,6 @@
 <img title="AmoCoale" alt="" src="/images/Logo_AmoCoala.png">
 
-# Input of AmoCoala - Nexus format 
+# AmoCoala's input
 
 This page describes the NEXUS formats (Jane / TreeMap) that you can use as input in AmoCoala. 
 
