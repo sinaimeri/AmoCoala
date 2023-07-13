@@ -1,6 +1,6 @@
 <img title="AmoCoale" alt="" src="/images/Logo_AmoCoala.png">
 
-# Options of the software AmoCoala
+# AmoCoala's options
 
 Here we list all options that are offered by the software:
 
