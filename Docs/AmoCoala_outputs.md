@@ -1,6 +1,6 @@
 <img title="AmoCoale" alt="" src="/images/Logo_AmoCoala.png">
 
-# Outputs files from AmoCoala
+# AmoCoala's outputs
 
 During its execution, AmoCoala produces some output files to register intermediate and final results. Given an input file `file.nex`, the program will produce the following files:
 
