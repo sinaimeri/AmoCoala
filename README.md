@@ -44,7 +44,7 @@ jar cvfm AmoCoala.jar manifest.MF .
 
 6. Check the installation process by running this toy example:
 ```
-     java -jar AmoCoala.jar -input Datasets/file.jane.nex  -metric 1 -N 10 -M 10 -R 1 -t 0.1
+     java -jar AmoCoala.jar -input Datasets/toy-example.nex  -metric 1 -N 10 -M 10 -R 1 -t 0.1
 ```
 
 
